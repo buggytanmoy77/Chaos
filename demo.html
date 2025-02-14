@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Generator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(2, 2, 2);
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .chaos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2vw;
+        }
+
+        .input-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 3vh;
+            background-color: rgb(24, 22, 22);
+            height: 95vh;
+            width: 25vw;
+            border-radius: 1rem;
+        }
+
+        .input-image-container {
+            height: 75%;
+            width: 60%;
+            border: 2px dashed white;
+            border-radius: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .input-image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            display: none; /* Initially hidden */
+        }
+
+        .upload-btn {
+            width: 50%;
+            height: 7%;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 1rem;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .upload-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .output-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 3vh;
+            background-color: rgb(24, 22, 22);
+            height: 95vh;
+            width: 71vw;
+            border-radius: 1rem;
+        }
+
+        .playground {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 55%;
+            height: 55%;
+            border: 1px solid white;
+        }
+
+        .generated-img {
+            width: 90%;
+            height: 90%;
+            border: 1px solid white;
+        }
+
+        .additional-prompt {
+            width: 80%;
+            height: 13%;
+            border: 1px solid white;
+        }
+
+        .generate-btn {
+            width: 15%;
+            height: 7%;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 1rem;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .generate-btn:hover {
+            background-color: #218838;
+        }
+
+        /* Hide default file input */
+        #imageUpload {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="chaos">
+        <div class="input-section">
+            <div class="input-image-container">
+                <img id="previewImg" src="" alt="Uploaded Image">
+            </div>
+            <input type="file" id="imageUpload" accept="image/*">
+            <label for="imageUpload" class="upload-btn">Upload</label>
+        </div>
+        <div class="output-section">
+            <div class="heading">IMAGE GENERATOR</div>
+            <div class="playground">
+                <div class="generated-img">Output Image</div>
+            </div>
+            <div class="additional-prompt">Additional Prompt from User</div>
+            <button class="generate-btn">Generate</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('imageUpload').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const previewImg = document.getElementById('previewImg');
+                    previewImg.src = e.target.result;
+                    previewImg.style.display = "block"; // Show image
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+
+</body>
+</html>

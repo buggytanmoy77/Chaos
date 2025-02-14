@@ -9,13 +9,12 @@
 <body>
     <div class="chaos">
     <div class="input-section">
-        <div class="input-container-heading">
-            Upload Your Images 
-        </div>
         <div class="input-image-container">
             input images
+            <img id="previewImg" src="" alt="Uploaded Image">
         </div>
-        <button class="upload-btn">Upload</button>
+        <input type="file" id="imageUpload" accept="image/*">
+        <button class="upload-btn" onclick="document.getElementById('imageUpload').click()">Upload</button>
     </div>
     <div class="output-section">
         <div class="heading">IMAGE GENERATOR</div>

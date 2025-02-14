@@ -27,25 +27,22 @@ body{
     gap: 3vh;
     background-color: rgb(24, 22, 22);
     height: 95vh;
-    width: 30vw;
+    width: 25vw;
     border-radius: 1rem;
 }
 
-.input-container-heading{
-    height: 12%;
-    width: 80%;
-    border: 1px solid rgb(255, 251, 251);
-}
-
 .input-image-container{
-    height: 60%;
-    width: 70%;
-    border: 1px solid rgb(255, 251, 251);
+    height: 75%;
+    width: 60%;
+    border: 2px solid rgb(255, 251, 251);
+    border-style: dashed;
+    border-radius: 1rem;
 }
 
 .upload-btn{
+    width: 50%;
     height: 7%;
-    width: 30%;
+    border: 1px solid white;
     border-radius: 1rem;
 }
 
@@ -57,7 +54,7 @@ body{
     gap: 3vh;
     background-color: rgb(24, 22, 22);
     height: 95vh;
-    width: 66vw;
+    width: 71vw;
     border-radius: 1rem;
 }
 
@@ -65,14 +62,14 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60%;
-    height: 60%;
+    width: 55%;
+    height: 55%;
     border: 1px solid white;
 }
 
 .generated-img{
-    width: 80%;
-    height: 80%;
+    width: 90%;
+    height: 90%;
     border: 1px solid white;
 }
 
