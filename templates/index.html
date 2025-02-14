@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="chaos">
+    <div class="input-section">
+        <div class="input-container-heading">
+            Upload Your Images 
+        </div>
+        <div class="input-image-container">
+            input images
+        </div>
+        <button class="upload-btn">Upload</button>
+    </div>
+    <div class="output-section">
+        <div class="heading">IMAGE GENERATOR</div>
+        <div class="playground">
+            <div class="generated-img">output image</div>
+        </div>
+        <div class="additional-prompt">Additonal Prompt from User</div>
+        <button class="generate-btn">Generate</button>
+    </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
