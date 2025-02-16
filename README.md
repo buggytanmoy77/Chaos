@@ -210,7 +210,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Tanmoy Talukdar - [@buggytanmoy77](https://github.com/buggytanmoy77) - buggytanmoy@email.com<br />
+Tanmoy Talukdar - [@buggytanmoy77](https://github.com/buggytanmoy77) - talukdartanmay116@email.com<br />
 Hrishikesh Nath - [@wardayX](https://github.com/wardayX) - nathh722@gmail.com<br />
 Faruk Ahmed - [@Faruk0713](https://github.com/Faruk0713) - fa0713026@gmail.com
 
