@@ -102,6 +102,8 @@ python app.py
 ![Interface Preview](images/image11.png)  
 *Image generation interface with dark theme*
 
+### If you want to just see the Frontend for this approach RUN DEMO.HTML
+
 ### Troubleshooting
 
 **Common Issues:**
@@ -131,7 +133,7 @@ Contributions are welcome! Please follow these steps:
    git clone https://github.com/buggytanmoy77/Chaos.git
    cd chaos-ai
    ```
-2. Open and run the provided Colab notebook.
+2. Open and run the Colab notebook - IMAGE_GENERATOR_USING_GRADIO_APPROACH.ipynb
 
 ### Manual Installation
 
