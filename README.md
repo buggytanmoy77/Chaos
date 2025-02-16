@@ -35,7 +35,7 @@ An advanced AI image generation tool that combines multiple images to create stu
 ![Stable Diffusion](https://img.shields.io/badge/Stable%20Diffusion-656D78?style=for-the-badge&logo=ai&logoColor=white)
 
 **AI Models:**  
-- Stable Diffusion v1.4
+- DreamShaper v8(from CivitAI)
 - CLIP ViT-L/14
 - T5-base Summarization
 
