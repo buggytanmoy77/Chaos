@@ -1,165 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Generator</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Generator</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&family=Oswald:wght@400;700&family=Roboto:wght@400;700&family=Ubuntu:wght@400;700&display=swap');
 
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: rgb(2, 2, 2);
-            height: 100vh;
-            width: 100vw;
-        }
+    * { margin: 0; padding: 0; }
+    html {
+      scrollbar-width: thin;
+      scrollbar-color: #555 #2a2a2a;
+    }
+    ::-webkit-scrollbar { width: 12px; height: 12px; }
+    ::-webkit-scrollbar-track { background: #2a2a2a; }
+    ::-webkit-scrollbar-thumb {
+      background-color: #555; border-radius: 10px; border: 3px solid #2a2a2a;
+    }
+    ::-webkit-scrollbar-thumb:hover { background-color: #777; }
 
-        .chaos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 2vw;
-        }
-
-        .input-section {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 3vh;
-            background-color: rgb(24, 22, 22);
-            height: 95vh;
-            width: 25vw;
-            border-radius: 1rem;
-        }
-
-        .input-image-container {
-            height: 75%;
-            width: 60%;
-            border: 2px dashed white;
-            border-radius: 1rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .input-image-container img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            display: none; /* Initially hidden */
-        }
-
-        .upload-btn {
-            width: 50%;
-            height: 7%;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 1rem;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .upload-btn:hover {
-            background-color: #0056b3;
-        }
-
-        .output-section {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 3vh;
-            background-color: rgb(24, 22, 22);
-            height: 95vh;
-            width: 71vw;
-            border-radius: 1rem;
-        }
-
-        .playground {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 55%;
-            height: 55%;
-            border: 1px solid white;
-        }
-
-        .generated-img {
-            width: 90%;
-            height: 90%;
-            border: 1px solid white;
-        }
-
-        .additional-prompt {
-            width: 80%;
-            height: 13%;
-            border: 1px solid white;
-        }
-
-        .generate-btn {
-            width: 15%;
-            height: 7%;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            border-radius: 1rem;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .generate-btn:hover {
-            background-color: #218838;
-        }
-
-        /* Hide default file input */
-        #imageUpload {
-            display: none;
-        }
-    </style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(2,2,2);
+      height: 100vh;
+      width: 100vw;
+      font-family: 'Roboto', sans-serif;
+    }
+    .chaos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2vw;
+    }
+    .input-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 3vh;
+      background-color: rgb(24, 22, 22);
+      height: 95vh;
+      width: 25vw;
+      border-radius: 1rem;
+    }
+    .input-image-container {
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      height: 75%;
+      width: 70%;
+      overflow-y: scroll;
+      gap: 1vh;
+      border: 2px dashed rgb(255, 251, 251);
+      border-radius: 1rem 0px 0px 1rem;
+      padding: 1.5vh 0px;
+    }
+    .input-image-container img {
+      max-width: 100%;
+      height: auto;
+      width: 85%;
+      border: 5px solid rgb(45, 42, 42);
+      border-radius: 0.5rem;
+    }
+    .upload-btn {
+      font-size: 1.5rem;
+      font-weight: 600;
+      font-family: 'Kanit', sans-serif;
+      cursor: pointer;
+      width: 60%;
+      height: 7%;
+      background-color: rgb(106, 163, 255);
+      border: 3px solid black;
+      border-radius: 1rem;
+    }
+    .output-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 3vh;
+      background-color: rgb(24, 22, 22);
+      height: 95vh;
+      width: 71vw;
+      border-radius: 1rem;
+    }
+    .heading {
+      font-family: 'Oswald', sans-serif;
+      color: white;
+      font-size: 2rem;
+    }
+    .playground {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      height: 50%;
+      border: 1px solid white;
+    }
+    .generated-img {
+      width: 92%;
+      height: 90%;
+      border: 1px solid white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .generated-img img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+    .additional-prompt {
+      width: 80%;
+      height: 8%;
+      border: 3px solid black;
+      padding: 1rem;
+      font-size: 1.1rem;
+      border-radius: 1rem;
+    }
+    .generate-btn {
+      font-size: 1.5rem;
+      font-weight: 600;
+      font-family: 'Kanit', sans-serif;
+      cursor: pointer;
+      width: 20%;
+      height: 7%;
+      background-color: rgb(106, 163, 255);
+      border: 3px solid black;
+      border-radius: 1rem;
+    }
+    #imageUpload { display: none; }
+  </style>
 </head>
 <body>
-    <div class="chaos">
-        <div class="input-section">
-            <div class="input-image-container">
-                <img id="previewImg" src="" alt="Uploaded Image">
-            </div>
-            <input type="file" id="imageUpload" accept="image/*">
-            <label for="imageUpload" class="upload-btn">Upload</label>
-        </div>
-        <div class="output-section">
-            <div class="heading">IMAGE GENERATOR</div>
-            <div class="playground">
-                <div class="generated-img">Output Image</div>
-            </div>
-            <div class="additional-prompt">Additional Prompt from User</div>
-            <button class="generate-btn">Generate</button>
-        </div>
+  <div class="chaos">
+    <div class="input-section">
+      <div class="input-image-container" id="imageContainer"></div>
+      <input type="file" id="imageUpload" accept="image/*">
+      <button class="upload-btn" id="uploadBtn">Upload Images</button>
     </div>
+    <div class="output-section">
+      <div class="heading">IMAGE GENERATOR</div>
+      <div class="playground">
+        <div class="generated-img" id="generatedImg"></div>
+      </div>
+      <textarea class="additional-prompt" id="additionalPrompt" rows="5" cols="50" placeholder="Enter Additional Description"></textarea>
+      <button class="generate-btn" id="generateBtn">Generate</button>
+    </div>
+  </div>
+  <script>
+    // Global array to store uploaded file objects
+    let uploadedFiles = [];
+    const maxImages = 5;
+    
+    const uploadBtn = document.getElementById('uploadBtn');
+    const imageUpload = document.getElementById('imageUpload');
+    const imageContainer = document.getElementById('imageContainer');
+    const generateBtn = document.getElementById('generateBtn');
+    const additionalPromptEl = document.getElementById('additionalPrompt');
+    const generatedImgContainer = document.getElementById('generatedImg');
 
-    <script>
-        document.getElementById('imageUpload').addEventListener('change', function(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const previewImg = document.getElementById('previewImg');
-                    previewImg.src = e.target.result;
-                    previewImg.style.display = "block"; // Show image
-                };
-                reader.readAsDataURL(file);
-            }
+    // Upload button click triggers file selection
+    uploadBtn.addEventListener('click', () => {
+      if (uploadedFiles.length < maxImages) {
+        imageUpload.click();
+      } else {
+        alert("You can only upload up to 5 images.");
+      }
+    });
+
+    // When a file is selected, store it and preview it
+    imageUpload.addEventListener('change', function(event) {
+      const file = event.target.files[0];
+      if (file && uploadedFiles.length < maxImages) {
+        uploadedFiles.push(file);  // Store the file
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const img = document.createElement("img");
+          img.src = e.target.result;
+          imageContainer.appendChild(img);
+        };
+        reader.readAsDataURL(file);
+        if (uploadedFiles.length >= maxImages) {
+          uploadBtn.disabled = true;
+          uploadBtn.style.backgroundColor = "gray";
+          uploadBtn.innerText = "Limit Reached";
+        }
+      }
+    });
+
+    // When Generate button is clicked, send the files and prompt to the server
+    generateBtn.addEventListener('click', async () => {
+      if (uploadedFiles.length === 0) {
+        alert("Please upload at least one image.");
+        return;
+      }
+      // Create a FormData object and append all image files
+      const formData = new FormData();
+      uploadedFiles.forEach(file => formData.append("images", file));
+      // Append additional prompt text
+      formData.append("additional_prompt", additionalPromptEl.value);
+      
+      try {
+        // Replace 'YOUR_NGROK_URL' with your actual ngrok URL if needed.
+        const response = await fetch("/generate", {
+          method: "POST",
+          body: formData
         });
-    </script>
-
+        
+        if (!response.ok) {
+          const errorData = await response.json();
+          alert("Error: " + errorData.error);
+          return;
+        }
+        // Get the returned image blob and display it
+        const blob = await response.blob();
+        const imageUrl = URL.createObjectURL(blob);
+        generatedImgContainer.innerHTML = `<img src="${imageUrl}" alt="Generated Image">`;
+      } catch (error) {
+        alert("An error occurred: " + error);
+      }
+    });
+  </script>
 </body>
 </html>

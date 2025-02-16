@@ -7,22 +7,21 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    <div class="chaos">
+  <div class="chaos">
     <div class="input-section">
-        <div class="input-image-container" id="imageContainer">
-        </div>
-        <input type="file" id="imageUpload" accept="image/*">
-        <button class="upload-btn" id="uploadBtn">Upload Images</button>
+      <div class="input-image-container" id="imageContainer"></div>
+      <input type="file" id="imageUpload" accept="image/*">
+      <button class="upload-btn" id="uploadBtn">Upload Images</button>
     </div>
     <div class="output-section">
-        <div class="heading">IMAGE GENERATOR</div>
-        <div class="playground">
-            <div class="generated-img">output image</div>
-        </div>
-        <div class="additional-prompt">Additonal Prompt from User</div>
-        <button class="generate-btn">Generate</button>
+      <div class="heading">IMAGE GENERATOR</div>
+      <div class="playground">
+        <div class="generated-img" id="generatedImg"></div>
+      </div>
+      <textarea class="additional-prompt" id="additionalPrompt" rows="5" cols="50" placeholder="Enter Additional Description"></textarea>
+      <button class="generate-btn" id="generateBtn">Generate</button>
     </div>
-    </div>
+  </div>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
