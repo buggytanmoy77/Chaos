@@ -214,4 +214,4 @@ Tanmoy Talukdar - [@buggytanmoy77](https://github.com/buggytanmoy77) - talukdart
 Hrishikesh Nath - [@wardayX](https://github.com/wardayX) - nathh722@gmail.com<br />
 Faruk Ahmed - [@Faruk0713](https://github.com/Faruk0713) - fa0713026@gmail.com
 
-Project Link: [https://github.com/buggytanmoy77/Chaos-AI-Generator](https://github.com/buggytanmoy77/Chaos-AI-Generator)
+Project Link: [https://github.com/buggytanmoy77/Chaos-AI-Generator](https://github.com/buggytanmoy77/Chaos)
