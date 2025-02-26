@@ -186,6 +186,9 @@ After launching, an Ngrok-generated URL is displayed for external access.
 ![screenshot](images/naruto.png)  
 *Gradio image generation interface with dark theme*
 
+## [UML Design](https://www.figma.com/design/kissY5jtEJgT4IHNEysBZu/ChaosUML?node-id=0-1&t=XdaIK8M4jYAPzDFo-1)
+
+
 ## Future Improvements
 
 - Support for additional image formats.
